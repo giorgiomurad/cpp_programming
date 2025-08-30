@@ -117,7 +117,7 @@ int main()
      */
     x = -6.2;
     z = abs(x);
-    //Output : 6
+    //Output : 6.2
 
 
 

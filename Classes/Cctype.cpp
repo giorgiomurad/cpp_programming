@@ -1,4 +1,4 @@
-/* Guide to class string in C++
+/* Guide to class cctype in C++
  *
  * Author : Giorgio Murad Murad
  */
