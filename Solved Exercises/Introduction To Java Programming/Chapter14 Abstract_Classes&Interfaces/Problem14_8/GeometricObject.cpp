@@ -79,3 +79,7 @@ ostream& operator<<(ostream& os, const GeometricObject& obj) {
 
     return os;
 }
+
+void GeometricObject::printStatus() {
+
+}

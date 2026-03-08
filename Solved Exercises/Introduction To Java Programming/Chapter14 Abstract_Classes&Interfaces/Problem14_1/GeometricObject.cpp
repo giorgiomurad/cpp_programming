@@ -1,8 +1,11 @@
 //
-// Created by Giorgio Murad on 25/10/2025.
+// Created by Giorgio Murad on 21/11/2025.
 //
 
 #include "GeometricObject.h"
+
+#include "Circle.h"
+#include "Rectangle.h"
 
 // Constructor that creates a default geometric object
 GeometricObject::GeometricObject() {
@@ -78,4 +81,33 @@ ostream& operator<<(ostream& os, const GeometricObject& obj) {
        << "Is Filled:\t" << isFilled << endl;
 
     return os;
+}
+
+int GeometricObject::compareTo(GeometricObject &e) {
+    if (Circle *circle1 = dynamic_cast<Circle *>(this)) {
+        if (Circle *circle2 = dynamic_cast<Circle *>(&e)) {
+            return (int) circle1->getArea() - circle2->getArea();
+        }
+
+        if (Rectangle *rect2 = dynamic_cast<Rectangle *>(&e)) {
+            return (int) circle1->getArea() - rect2->getArea();
+        }
+    }
+
+    if (Rectangle *rect1 = dynamic_cast<Rectangle *>(this)) {
+        if (Rectangle *rect2 = dynamic_cast<Rectangle *>(&e)) {
+            return (int) rect1->getArea() - rect2->getArea();
+        }
+
+        if (Circle *circle2 = dynamic_cast<Circle *>(&e)) {
+            return (int) rect1->getArea() - circle2->getArea();
+        }
+    }
+}
+
+GeometricObject &GeometricObject::max(GeometricObject &a, GeometricObject &b) {
+    if (a.compareTo(b) > 0)
+        return a;
+
+    return b;
 }

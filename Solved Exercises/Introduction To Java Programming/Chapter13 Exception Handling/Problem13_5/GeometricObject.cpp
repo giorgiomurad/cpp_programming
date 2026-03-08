@@ -12,7 +12,7 @@ GeometricObject::GeometricObject() {
 
     setColor("");
     setFilled(false);
-    setDateCreated(dateTime.tm_mday, dateTime.tm_mon, dateTime.tm_year);
+    setDateCreated(dateTime.tm_mday, dateTime.tm_mon, dateTime.tm_year+1900);
 }
 
 // Constructor that creates a geometric object with the given color and filled status
